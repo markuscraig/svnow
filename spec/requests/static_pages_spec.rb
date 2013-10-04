@@ -2,59 +2,35 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
+  subject { page }
+
   describe "Home Page" do
+    before { visit root_path }
 
-  	it "should exist" do
-      get static_pages_home_path
-      response.status.should be(200)
-  	end
-
-    it "should have the content 'SV-Now'" do
-    	# using the capybara 'visit' method and 'page' variable
-    	visit '/static_pages/home'
-    	expect(page).to have_content('SV-Now')
-    end
-
-    it "should have the right title" do
-    	visit '/static_pages/home'
-    	expect(page).to have_title('SV-Now')
-    end
+    it { should have_content('StadiumVision NOW') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('Home') }
   end
 
   describe "Help Page" do
+    before { visit help_path }
 
-  	it "should exist" do
-  		get static_pages_help_path
-  		response.status.should be(200)
-  	end
-
-  	it "should have the content 'Help'" do
-  		visit '/static_pages/help'
-  		expect(page).to have_content('Help')
-  	end
-
-    it "should have the right title" do
-    	visit '/static_pages/help'
-    	expect(page).to have_title('Help')
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
   describe "About Page" do
+    before { visit about_path }
 
-  	it "should exist" do
-  		get static_pages_about_path
-  		response.status.should be(200)
-  	end
+    it { should have_content('About') }
+    it { should have_title(full_title('About')) }
+  end
 
-  	it "should have the content 'About'" do
-  		visit '/static_pages/about'
-  		expect(page).to have_content('About')
-  	end
+  describe "Contact Page" do
+    before { visit contact_path }
 
-    it "should have the right title" do
-    	visit '/static_pages/about'
-    	expect(page).to have_title('About')
-    end
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
 
 end
