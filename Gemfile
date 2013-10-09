@@ -27,6 +27,7 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.2.1'
 gem 'bootstrap-sass', '2.3.2.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
