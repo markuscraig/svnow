@@ -29,6 +29,7 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.2.1'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'filepicker-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
